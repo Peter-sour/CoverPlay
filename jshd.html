@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <title>Scrollable Video Categories</title>
+  <style>
+    /* CSS */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .node-scroll {
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    .node-scrolltop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .node-scrolltop h2 {
+      font-size: 24px;
+    }
+
+    .animation-scroll {
+      display: flex;
+      gap: 10px;
+    }
+
+    .animation-scroll-on i {
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+      background-color: #222;
+      padding: 10px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .animation-scroll-on i:hover {
+      background-color: #555;
+    }
+
+    .node-scrollbottom {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      scroll-behavior: smooth;
+      padding: 10px;
+      background-color: #1e1e1e;
+      border-radius: 5px;
+    }
+
+    .scrollfoto {
+      flex: 0 0 auto;
+      width: 200px;
+      height: 120px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .scrollfoto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <!-- HTML -->
+  <div class="node-scroll">
+    <div class="node-scrolltop">
+      <div class="node-scrolltop-one">
+        <h2>Video Categories</h2>
+        <div class="scroll-top">
+          <span>View All</span>
+        </div>
+      </div>
+      <div class="animation-scroll">
+        <div class="animation-scroll-on">
+          <i id="left" class="ph ph-caret-left">&#9664;</i>
+        </div>
+        <div class="animation-scroll-on">
+          <i id="right" class="ph ph-caret-right">&#9654;</i>
+        </div>
+      </div>
+    </div>
+    <div class="node-scrollbottom">
+      <!-- Konten Scroll -->
+      <div class="scrollfoto">
+        <img src="foto5.png" alt="Foto 5">
+      </div>
+      <div class="scrollfoto">
+        <img src="foto6.png" alt="Foto 6">
+      </div>
+      <div class="scrollfoto">
+        <img src="foto7.png" alt="Foto 7">
+      </div>
+      <div class="scrollfoto">
+        <img src="foto8.png" alt="Foto 8">
+      </div>
+      <div class="scrollfoto">
+        <img src="foto9.png" alt="Foto 9">
+      </div>
+      <div class="scrollfoto">
+        <img src="foto10.png" alt="Foto 10">
+      </div>
+      <div class="scrollfoto">
+        <img src="foto11.png" alt="Foto 11">
+      </div>
+      <div class="scrollfoto">
+        <img src="foto12.png" alt="Foto 12">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript
+    const scrollBottom = document.querySelector('.node-scrollbottom');
+    const leftButton = document.getElementById('left');
+    const rightButton = document.getElementById('right');
+
+    // Scroll kiri
+    leftButton.addEventListener('click', () => {
+      scrollBottom.scrollBy({
+        left: -200, // Scroll ke kiri sebanyak 200px
+        behavior: 'smooth' // Animasi smooth
+      });
+    });
+
+    // Scroll kanan
+    rightButton.addEventListener('click', () => {
+      scrollBottom.scrollBy({
+        left: 200, // Scroll ke kanan sebanyak 200px
+        behavior: 'smooth' // Animasi smooth
+      });
+    });
+  </script>
+</body>
+</html>
