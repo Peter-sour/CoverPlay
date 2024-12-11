@@ -863,13 +863,6 @@ footer{
         width: 330px;
         height: 150px;
     }
-    .node-explore{
-        outline: 1px solid red;
-    }
-    .node-scrolltop-one{
-        outline: 1px solid green;
-        margin-left: 10px;
-    }
     .node-scrolltop-one h2{
         font-size: 18px;
     }
