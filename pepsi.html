@@ -15,10 +15,18 @@
     <div class="beranda">
         <div class="wrapper" id="navbar">
             <div class="title">
-                <h1><span>C</span><span>OVERPLAY</span></h1>
+                <h1>
+                    <span>C</span>
+                    <span class="title-second">OVERPLAY</span>
+                </h1>
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..." title="Type in a name">
+                <div class="list-navbar" id="list">
+                    <div class="note-list" onclick="toggleMenu()">
+                        <i class="ph ph-list"></i>
+                    </div>
+                </div>
             </div>
-            <div class="nav">
+            <div class="nav" id="navigation">
                 <ul>
                     <li class="follow"><a href="#">Video</a></li>
                     <li class="follow"><a href="#">Music</a></li>
@@ -30,9 +38,7 @@
                         <p>Sign In</p>
                     </div>
                     <div class="note-list">
-                        <a href="#">
-                            <i class="ph ph-list"></i>
-                        </a>
+                        <i class="ph ph-list"></i>
                     </div>
                 </div>
             </div>
@@ -170,7 +176,7 @@
             </div>
             <div class="node-scroll">
                 <div class="node-scrolltop">
-                    <div class="node-scrolltop-one">
+                    <div class="node-scrolltop-two">
                         <h2>video categories</h2>
                         <div class="scroll-top">
                             <span style="font-size: 14px;">View all</span>
@@ -427,6 +433,37 @@ rightButton.addEventListener('click', () => {
   });
 });
     </script>
+     <script>
+        // Scroll dengan roda mouse secara horizontal
+scrollBottom.addEventListener('wheel', (event) => {
+  event.preventDefault(); // Mencegah scroll default secara vertikal
+  scrollBottom.scrollBy({
+    left: event.deltaY, // Gunakan deltaY untuk menggulir horizontal
+    behavior: 'smooth' // Animasi smooth
+  });
+  scrollBottom.addEventListener('touchmove', (event) => {
+  // Mencegah scrolling vertikal saat geser horizontal
+  event.preventDefault();
+
+  // Posisi saat jari digeser
+  const moveX = event.touches[0].clientX;
+  const diffX = startX - moveX; // Menghitung perbedaan posisi
+
+  if (Math.abs(diffX) > 0) {
+    scrollBottom.scrollBy({
+      left: diffX, // Scroll horizontal sesuai geseran jari
+      behavior: 'smooth'
+    });
+    startX = moveX; // Menyimpan posisi baru untuk geseran berikutnya
+  }
+    </script>
     <script src="fotscrol.js"></script>
+    <script>
+        function toggleMenu(){
+            const navigation = document.getElementById('navigation');
+
+            navigation.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
